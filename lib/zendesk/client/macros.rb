@@ -10,7 +10,7 @@ module Zendesk
 
     class MacrosCollection < Collection
       def initialize(client, *args)
-        super(client, :macros, *args)
+        super(client, :macro, *args)
       end
     end
   end

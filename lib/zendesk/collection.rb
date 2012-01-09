@@ -1,13 +1,11 @@
-require "active_support/inflector" # `singularize`
-# require "zendesk/request"
 require "zendesk/connection"
 require "zendesk/paginator"
 
 module Zendesk
   class Collection
     include Paginator  # `clear_cache`, `fetch`, `each`, `[]`, `page`, `per_page`, `method_missing`
-    extend Connection  # `connection`
     include Connection
+    extend Connection  # `connection`
 
     attr_accessor *Config::VALID_OPTIONS_KEYS
 
@@ -15,16 +13,18 @@ module Zendesk
       clear_cache
 
       @client   = client
-      @resource = resource.to_s.singularize
+      @resource = resource.to_s
+      @path     = resource_path(@resource)
       @query    = args.last.is_a?(Hash) ? args.pop : {}
 
-      case id = args.shift
+      case selection = args.shift
       when nil
-        @query[:path] = resource.to_s
+        @query[:path] = @path
       when Integer
-        @query[:path] = "#{resource}/#{id}"
-      else
-        raise ArgumentError, "argument must be a numeric id."
+        @query[:path] = "#{@path}/#{selection}"
+      when String
+        @query[:path]  = @path
+        @query[:query] = selection
       end
     end
 
@@ -75,6 +75,20 @@ module Zendesk
 
     def formatted_path(path, format)
       [path, format].compact.join(".")
+    end
+
+    # ghetto but better than requiring ActiveSupport or writing some inflector myself
+    def resource_path(obj)
+      {
+        "user"         => "users",
+        "entry"        => "entries",
+        "forum"        => "forums",
+        "group"        => "groups",
+        "organization" => "organizations",
+        "tag"          => "tags",
+        "ticket"       => "tickets",
+        "ticket_field" => "ticket_fields",
+      }[obj]
     end
 
   end

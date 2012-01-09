@@ -10,7 +10,7 @@ module Zendesk
 
     class OrganizationsCollection < Collection
       def initialize(client, *args)
-        super(client, :organizations, *args)
+        super(client, :organization, *args)
       end
     end
   end

@@ -12,22 +12,8 @@ module Zendesk
     end
 
     class UsersCollection < Collection
-
       def initialize(client, *args)
-        clear_cache
-        @client = client
-        @resource = "user"
-        @query  = args.last.is_a?(Hash) ? args.pop : {}
-
-        case selection = args.shift
-        when nil
-          @query[:path] = "users"
-        when Integer
-          @query[:path] = "users/#{selection}"
-        when String
-          @query[:path]  = "users"
-          @query[:query] = selection
-        end
+        super(client, :user, *args)
       end
 
       # ## Get currently authenticated user
@@ -44,7 +30,6 @@ module Zendesk
       #
       #    @zendesk.users(123).identities
       #
-      # TODO: incredibly dumb
       def identities(id=nil)
         @query[:path] += "/user_identities/#{id}"
         self

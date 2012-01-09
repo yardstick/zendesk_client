@@ -10,7 +10,7 @@ module Zendesk
 
     class GroupsCollection < Collection
       def initialize(client, *args)
-        super(client, :groups, *args)
+        super(client, :group, *args)
       end
     end
   end

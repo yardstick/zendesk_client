@@ -9,7 +9,7 @@ module Zendesk
 
       class TicketFieldsCollection < Collection
         def initialize(client, *args)
-          super(client, :ticket_fields, *args)
+          super(client, :ticket_field, *args)
         end
       end
     end

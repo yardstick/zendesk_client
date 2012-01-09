@@ -10,7 +10,7 @@ module Zendesk
 
     class EntriesCollection < Collection
       def initialize(client, *args)
-        super(client, :entries, *args)
+        super(client, :entry, *args)
       end
     end
   end

@@ -11,7 +11,7 @@ module Zendesk
     class ForumsCollection < Collection
 
       def initialize(client, *args)
-        super(client, :forums, *args)
+        super(client, :forum, *args)
       end
 
       # @zendesk.forums(123).entries

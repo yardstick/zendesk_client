@@ -2,7 +2,7 @@ module Zendesk
   class Client
     module Tags
       # @zendesk.tags
-      # @zendesk.tags(123)
+      # @zendesk.tags("cats", :tickets)
       def tags(*args)
         TagsCollection.new(self, *args)
       end
@@ -10,7 +10,7 @@ module Zendesk
 
     class TagsCollection < Collection
       def initialize(client, *args)
-        super(client, :tags, *args)
+        super(client, :tag, *args)
       end
     end
   end

@@ -11,7 +11,7 @@ module Zendesk
     class TicketsCollection < Collection
       # TODO: document all the fields
       def initialize(client, *args)
-        super(client, :tickets, *args)
+        super(client, :ticket, *args)
       end
 
       def views
