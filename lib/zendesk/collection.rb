@@ -5,7 +5,6 @@ module Zendesk
   class Collection
     include Paginator  # `clear_cache`, `fetch`, `each`, `[]`, `page`, `per_page`, `method_missing`
     include Connection
-    extend Connection  # `connection`
 
     attr_accessor *Config::VALID_OPTIONS_KEYS
 
