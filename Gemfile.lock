@@ -44,7 +44,7 @@ GEM
     webmock (1.6.4)
       addressable (~> 2.2, > 2.2.5)
       crack (>= 0.1.7)
-    yajl-ruby (0.8.2)
+    yajl-ruby (1.4.1)
     yard (0.7.2)
 
 PLATFORMS
@@ -56,6 +56,6 @@ DEPENDENCIES
   pry
   rake (~> 0.8)
   webmock (~> 1.6)
-  yajl-ruby (~> 0.8.2)
+  yajl-ruby (~> 1.4.1)
   yard (~> 0.7)
   zendesk_client!
