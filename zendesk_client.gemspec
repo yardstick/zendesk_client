@@ -13,7 +13,7 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency "hashie", "~> 1.0.0"
   gem.add_runtime_dependency "faraday", "~> 0.7.3"
   gem.add_runtime_dependency "faraday_middleware", "0.7.0"
-  gem.add_runtime_dependency "multi_xml", "~> 0.2.0"
+  gem.add_runtime_dependency "multi_xml", ">= 0.2", "< 0.7"
   gem.add_runtime_dependency "multi_json", "~> 1.0.0"
   gem.add_runtime_dependency "patron"
 
