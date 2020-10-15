@@ -36,7 +36,7 @@ GEM
       ruby_parser (>= 2.3.1)
       slop (~> 2.1.0)
     rack (1.4.0)
-    rake (0.9.2)
+    rake (13.0.1)
     ruby_parser (2.3.1)
       sexp_processor (~> 3.0)
     sexp_processor (3.0.9)
@@ -54,7 +54,7 @@ DEPENDENCIES
   minitest
   nokogiri (~> 1.4)
   pry
-  rake (~> 0.8)
+  rake (~> 13.0)
   webmock (~> 1.6)
   yajl-ruby (~> 0.8.2)
   yard (~> 0.7)

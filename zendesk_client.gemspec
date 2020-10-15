@@ -4,7 +4,7 @@ require File.expand_path("../lib/zendesk/version", __FILE__)
 Gem::Specification.new do |gem|
   gem.add_development_dependency "yajl-ruby", "~> 0.8.2"
   gem.add_development_dependency "nokogiri", "~> 1.4"
-  gem.add_development_dependency "rake", "~> 0.8"
+  gem.add_development_dependency "rake", "~> 13.0"
   gem.add_development_dependency "webmock", "~> 1.6"
   gem.add_development_dependency "yard", "~> 0.7"
   gem.add_development_dependency "minitest"
