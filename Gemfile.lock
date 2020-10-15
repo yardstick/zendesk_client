@@ -45,7 +45,7 @@ GEM
       addressable (~> 2.2, > 2.2.5)
       crack (>= 0.1.7)
     yajl-ruby (0.8.2)
-    yard (0.7.2)
+    yard (0.9.25)
 
 PLATFORMS
   ruby
